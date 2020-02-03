@@ -1,11 +1,11 @@
 class HugoUnix < Formula
-  desc "Hugo compiler, debugger and CLI interpreter"
+  desc "Hugo command-line compiler, debugger and interpreter"
   homepage "https://www.generalcoffee.com/hugo"
-  url "https://bitbucket.org/0branch/hugo-unix/downloads/hugo-unix-3.1.04.tar.bz2"
-  version "3.1.04"
-  sha256 "92b1ba037bec71b6c65b5964368a4b693f530598c93a6494c4c3c300ee3b6e72"
+  url "https://github.com/0branch/hugo-unix/releases/download/v3.1.05/hugo-unix-3.1.05-source.tar.bz2"
+  version "3.1.05"
+  sha256 "e06e7b063c9fc3458dbee1860751489fafc2dcd755e0f443ae42b7971ec80872"
 
-  depends_on "pkg-config"
+  depends_on "pkg-config" => :build
   depends_on "sdl2"
   depends_on "fluid-synth"
   depends_on "mpg123"
