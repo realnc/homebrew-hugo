@@ -11,6 +11,7 @@ class HugoUnix < Formula
   depends_on "mpg123"
   depends_on "libopenmpt"
   depends_on "libsndfile"
+  depends_on "ncurses"
 
   def install
     system "make", "ENABLE_AUDIO=yes", "MOD_BACKEND=mpt"
