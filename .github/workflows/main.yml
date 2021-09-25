@@ -1,6 +1,6 @@
 name: CI
 
-on: push
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build_macos:
@@ -10,13 +10,14 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Installs deps
-      run: brew install --only-dependencies ./Formula/hugo-unix.rb
+      run: brew install --only-dependencies --formula Formula/hugo-unix.rb
 
     - name: Build
-      run: brew reinstall --verbose --build-from-source ./Formula/hugo-unix.rb
+      run: brew reinstall --verbose --build-from-source --formula Formula/hugo-unix.rb
 
     - name: Test
       run: |
-        brew test ./Formula/hugo-unix.rb
-        brew audit --strict ./Formula/hugo-unix.rb
-        brew style ./Formula/hugo-unix.rb
+        brew developer on
+        brew test Formula/hugo-unix.rb
+        brew audit --strict --formula Formula/hugo-unix.rb
+        brew style --formula Formula/hugo-unix.rb
